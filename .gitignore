@@ -24,7 +24,8 @@ src/utils/TonConnectUIProvider.ts
 *.sln
 *.sw?
 
-
+src/style.css
+src/assets
 
 .nx/cache
 .nx/workspace-data
