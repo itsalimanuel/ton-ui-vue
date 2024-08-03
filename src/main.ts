@@ -1,10 +1,10 @@
 import { createApp } from "vue";
 import "./style.css";
-import { createTonConnectUIProvider } from "./utils/TonConnectUIProvider";
 import {
+  createTonConnectUIProvider,
   TonConnectUIContext,
   TonConnectUIOptionsContext,
-} from "./utils/TonConnectUIProvider";
+} from "../src/index";
 import App from "./App.vue";
 
 const { tonConnectUI, setOptions } = createTonConnectUIProvider({

@@ -3,9 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/ton-vue.umd.js",
+  "module": "./dist/ton-vue.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/ton-vue.es.js",
+      "require": "./dist/ton-vue.umd.js"
+    }
+  },
+  "types": "./dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc -b && vite build",
+    "build:lb": "vite build && vue-tsc --emitDeclarationOnly && pnpm run postbuild",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,5 +35,9 @@
     "vite": "^5.3.4",
     "vue-tsc": "^2.0.24"
   },
-  "nx": {}
+  "nx": {
+    "tags": [
+      "scope:ui-vue"
+    ]
+  }
 }
