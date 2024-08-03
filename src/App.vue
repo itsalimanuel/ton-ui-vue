@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
+import { inject } from "@vercel/analytics";
 import { TonConnectButton } from "./components";
 
 import { useTonAddress } from "./composables";
 const address = useTonAddress();
+onMounted(() => {
+  inject();
+});
 </script>
 
 <template>
