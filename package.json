@@ -1,7 +1,7 @@
 {
-  "name": "ui-vue",
-  "private": true,
-  "version": "0.0.0",
+  "name": "ton-with-vue",
+  "private": false,
+  "version": "0.1.0",
   "type": "module",
   "files": [
     "dist"
@@ -9,23 +9,27 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/ton-vue.umd.js",
-  "module": "./dist/ton-vue.es.js",
+  "main": "./dist/ton.umd.js",
+  "module": "./dist/ton.es.js",
   "exports": {
     ".": {
-      "import": "./dist/ton-vue.es.js",
-      "require": "./dist/ton-vue.umd.js"
+      "import": "./dist/ton.es.js",
+      "require": "./dist/ton.umd.js"
     }
   },
   "types": "./dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "build:lb": "vite build && vue-tsc --emitDeclarationOnly && pnpm run postbuild",
-    "preview": "vite preview"
+    "build-vite": "vue-tsc -b && vite build",
+    "build:lib": "tsc --noEmit --emitDeclarationOnly false && vite build",
+    "build": "gulp build && build-vite"
   },
   "dependencies": {
     "@tonconnect/ui": "^2.0.6",
+    "fs-extra": "^11.2.0",
+    "gulp": "^5.0.0",
+    "path": "^0.12.7",
+    "ton-with-vue": "^0.0.5-beta",
     "vue": "^3.4.31"
   },
   "devDependencies": {

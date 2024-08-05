@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { TonConnectButton } from "./components";
+import { TonConnectButton } from "ton-with-vue";
 
-import { useTonAddress } from "./composables";
-const address = useTonAddress();
 </script>
 
 <template>
@@ -30,7 +28,7 @@ const address = useTonAddress();
       <TonConnectButton class="ui-top" />
     </div>
 
-    {{ address }}
+
   </div>
 </template>
 

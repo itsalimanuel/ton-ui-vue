@@ -4,7 +4,7 @@ import {
   createTonConnectUIProvider,
   TonConnectUIContext,
   TonConnectUIOptionsContext,
-} from "../src/index";
+} from "ton-with-vue";
 import App from "./App.vue";
 
 const { tonConnectUI, setOptions } = createTonConnectUIProvider({

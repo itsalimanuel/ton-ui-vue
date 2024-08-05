@@ -23,8 +23,8 @@ src/utils/TonConnectUIProvider.ts
 *.njsproj
 *.sln
 *.sw?
-
-
+public
+src/package
 
 .nx/cache
 .nx/workspace-data
