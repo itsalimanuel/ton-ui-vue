@@ -1,13 +1,11 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { inject } from "@vercel/analytics";
-import { TonConnectButton } from "./components";
-import { useTonAddress } from "./composables";
-const address = useTonAddress();
+import { TonConnectButton, useTonAddress } from "ton-ui-vue";
+const adddres = useTonAddress()
 onMounted(() => {
   inject();
 });
-
 </script>
 
 <template>
@@ -33,9 +31,8 @@ onMounted(() => {
       <h2>tonconnect for vue3</h2>
       <span>By <a href="https://www.linkedin.com/in/khaloufali/">Ali</a></span>
       <TonConnectButton class="ui-top" />
+      {{ adddres }}
     </div>
-
-
   </div>
 </template>
 
