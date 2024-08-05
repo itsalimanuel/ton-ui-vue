@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a2 as t}from"./chunks/framework.Sicmpk4x.js";const g=JSON.parse('{"title":"Welcome","description":"","frontmatter":{},"headers":[],"relativePath":"get-start.md","filePath":"get-start.md"}'),n={name:"get-start.md"},e=t("",13),p=[e];function h(l,k,o,r,d,c){return a(),i("div",null,p)}const y=s(n,[["render",h]]);export{g as __pageData,y as default};
