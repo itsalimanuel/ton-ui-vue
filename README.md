@@ -9,16 +9,16 @@ TonConnect UI Vue is a library that provides components and context for integrat
 To install the library, use your preferred package manager:
 
 ```bash
-npm install ton-with-vue
+npm install ton-ui-vue
 # or
-yarn add ton-with-vue
+yarn add ton-ui-vue
 ```
 
 ## Setup
 
 ### 1. Import and Create the TonConnectUIProvider
 
-In your `main.ts`, import the necessary functions and contexts from `ton-with-vue`, and create the `TonConnectUIProvider` with your manifest URL.
+In your `main.ts`, import the necessary functions and contexts from `ton-ui-vue`, and create the `TonConnectUIProvider` with your manifest URL.
 
 ```typescript
 import { createApp } from 'vue';
@@ -27,7 +27,7 @@ import {
     createTonConnectUIProvider,
     TonConnectUIContext,
     TonConnectUIOptionsContext
-} from 'ton-with-vue';
+} from 'ton-ui-vue';
 
 const { tonConnectUI, setOptions } = createTonConnectUIProvider({
     manifestUrl: 'https://gist.githubusercontent.com/siandreev/75f1a2ccf2f3b4e2771f6089aeb06d7f/raw/d4986344010ec7a2d1cc8a2a9baa57de37aaccb8/gistfile1.txt'
@@ -54,7 +54,7 @@ Create a component or use the `TonConnectButton` in an existing component as sho
 
 ```vue
 <script setup lang="ts">
-import { TonConnectButton } from 'ton-with-vue';
+import { TonConnectButton } from 'ton-ui-vue';
 </script>
 
 <template>
@@ -77,7 +77,7 @@ import {
     createTonConnectUIProvider,
     TonConnectUIContext,
     TonConnectUIOptionsContext
-} from 'ton-with-vue';
+} from 'ton-ui-vue';
 
 const { tonConnectUI, setOptions } = createTonConnectUIProvider({
     manifestUrl: 'https://gist.githubusercontent.com/siandreev/75f1a2ccf2f3b4e2771f6089aeb06d7f/raw/d4986344010ec7a2d1cc8a2a9baa57de37aaccb8/gistfile1.txt'
@@ -101,6 +101,6 @@ app.mount('#app');
 </template>
 
 <script setup lang="ts">
-import { TonConnectButton } from 'ton-with-vue';
+import { TonConnectButton } from 'ton-ui-vue';
 </script>
 ```
