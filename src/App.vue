@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { TonConnectButton } from "ton-with-vue";
 import { onMounted } from "vue";
 import { inject } from "@vercel/analytics";
 import { TonConnectButton } from "./components";
