@@ -9,9 +9,9 @@ TonConnect UI Vue is a library that provides components and context for integrat
 To install the library, use your preferred package manager:
 
 ```bash
-npm install ton-ui-vue
+npm install ton-ui-vue @tonconnect/ui
 # or
-yarn add ton-ui-vue
+yarn add ton-ui-vue @tonconnect/ui
 ```
 
 ## Setup
