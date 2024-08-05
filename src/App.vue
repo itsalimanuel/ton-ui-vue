@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { TonConnectButton } from "ton-with-vue";
+import { onMounted } from "vue";
+import { inject } from "@vercel/analytics";
+import { TonConnectButton } from "./components";
+import { useTonAddress } from "./composables";
+const address = useTonAddress();
+onMounted(() => {
+  inject();
+});
 
 </script>
 
@@ -56,5 +64,3 @@ import { TonConnectButton } from "ton-with-vue";
   margin-top: 20px;
 }
 </style>
-import TonConnectButtonVue from './components/TonConnectButton.vue';import
-TonConnectButtonVue from './components/TonConnectButton.vue';
