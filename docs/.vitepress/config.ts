@@ -16,9 +16,10 @@ export default defineConfig({
       {
         text: "Documentation",
         items: [
-          { text: "Get Start", link: "/get-start" },
+          { text: "Get Started", link: "/get-started" },
           { text: "TonConnect Button", link: "/ton-button" },
           { text: "Hooks", link: "/hooks" },
+          { text: "Nuxt3", link: "/nuxt" },
           { text: "Developer", link: "/developer" },
         ],
       },

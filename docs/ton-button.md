@@ -23,7 +23,7 @@ import { TonConnectButton } from "ton-ui-vue";
 
 ### Props
 
-- **className** (`String`):
+- **class** (`String`):
   - Description: Custom class name for the button container.
   - Default: `""`
 - **style** (`Object`):

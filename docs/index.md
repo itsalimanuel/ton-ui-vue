@@ -10,8 +10,8 @@ hero:
     alt: Ton
   actions:
     - theme: brand
-      text: Get Start
-      link: /get-start
+      text: Get started
+      link: /get-started
     - theme: alt
       text: Developer
       link: /developer
