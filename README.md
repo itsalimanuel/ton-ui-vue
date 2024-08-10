@@ -1,3 +1,7 @@
+Here's how you can update the README to include the `useSendTransaction` composable:
+
+---
+
 # TonConnect UI Vue
 
 ## Introduction
@@ -9,9 +13,9 @@ TonConnect UI Vue is a library that provides components and context for integrat
 To install the library, use your preferred package manager:
 
 ```bash
-npm install ton-ui-vue
+npm install ton-ui-vue @tonconnect/ui
 # or
-yarn add ton-ui-vue
+yarn add ton-ui-vue @tonconnect/ui
 ```
 
 ## Setup
@@ -104,3 +108,77 @@ app.mount('#app');
 import { TonConnectButton } from 'ton-ui-vue';
 </script>
 ```
+
+### 4. Using `useSendTransaction` Composable
+
+The `useSendTransaction` composable allows you to send transactions using the TonConnect UI in a flexible and dynamic way. You can add multiple transaction messages with specific addresses and amounts, manage the transaction state, and handle user actions.
+
+#### Example Usage
+
+```vue
+<template>
+  <div>
+    <div v-for="(message, index) in messages" :key="index">
+      <input v-model="message.address" placeholder="Enter address" />
+      <input v-model="message.amount" placeholder="Enter amount" />
+    </div>
+    <button @click="addMessage('', '')">Add Message</button>
+    <button @click="sendTransaction" :disabled="sending">
+      Send Transaction
+    </button>
+    <p v-if="error">{{ error.message }}</p>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useSendTransaction } from '@/composables/useSendTransaction';
+
+const { sendTransaction, sending, error, messages, addMessage, clearMessages } = useSendTransaction();
+
+// Initialize with an empty message to start with
+addMessage('0:b2a1ecf5545e076cd36ae516ea7ebdf32aea008caa2b84af9866becb208895ad', '100000000');
+addMessage('0:a1b2c3d4e5f678901234567890abcdef1234567890abcdef1234567890abcdef', '200000000');
+</script>
+```
+
+#### API
+
+- **`sendTransaction()`**: Sends the transaction messages stored in the `messages` array.
+- **`addMessage(address: string, amount: string)`**: Adds a new transaction message to the `messages` array.
+- **`clearMessages()`**: Clears all transaction messages from the `messages` array.
+- **`messages`**: A reactive array containing the transaction messages.
+- **`sending`**: A reactive boolean indicating if the transaction is currently being sent.
+- **`error`**: A reactive error object that holds any errors encountered during the transaction process.
+
+## TonConnect UI Vue Integration for Nuxt 3
+
+### Step-by-Step Guide
+
+#### Create a Plugin
+
+Create a file named `ton-with-vue.ts` inside the `plugins` directory:
+
+```typescript
+// plugins/ton-with-vue.ts
+import {
+  createTonConnectUIProvider,
+  TonConnectUIContext,
+  TonConnectUIOptionsContext,
+  TonConnectButton,
+} from "ton-ui-vue";
+
+export default defineNuxtPlugin((nuxtApp) => {
+  const { tonConnectUI, setOptions } = createTonConnectUIProvider({
+    manifestUrl:
+      "https://gist.githubusercontent.com/siandreev/75f1a2ccf2f3b4e2771f6089aeb06d7f/raw/d4986344010ec7a2d1cc8a2a9baa57de37aaccb8/gistfile1.txt",
+  });
+
+  nuxtApp.vueApp.component("TonConnectButton", TonConnectButton);
+  nuxtApp.vueApp.provide(TonConnectUIContext, tonConnectUI);
+  nuxtApp.vueApp.provide(TonConnectUIOptionsContext, setOptions);
+});
+```
+
+---
+
+This updated README now includes the documentation for the `useSendTransaction` composable, providing a clear example of how to use it alongside the existing TonConnect UI components and setup instructions.

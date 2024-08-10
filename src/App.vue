@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { inject } from "@vercel/analytics";
-import { TonConnectButton, useTonAddress } from "ton-ui-vue";
-const adddres = useTonAddress()
+import { TonConnectButton, useSendTransaction } from "../src";
+
+const { sendTransaction, sending, error, messages, addMessage, clearMessages } =
+  useSendTransaction();
+
+addMessage("UQDvqTF0nH9vy-zasif4IV2wtiGxoP57hPLsO7q886OifpYk", "1000000");
+
 onMounted(() => {
   inject();
 });
@@ -31,7 +36,7 @@ onMounted(() => {
       <h2>tonconnect for vue3</h2>
       <span>By <a href="https://www.linkedin.com/in/khaloufali/">Ali</a></span>
       <TonConnectButton class="ui-top" />
-      {{ adddres }}
+
     </div>
   </div>
 </template>
