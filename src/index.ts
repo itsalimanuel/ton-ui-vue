@@ -11,4 +11,5 @@ export {
   useTonWallet,
   useTonConnectUI,
   useTonConnectModal,
+  useSendTransaction,
 } from "./composables";

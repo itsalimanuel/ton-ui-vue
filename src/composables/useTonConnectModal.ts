@@ -1,4 +1,3 @@
-// src/composables/useTonConnectModal.ts
 import { ref, onMounted, onUnmounted } from "vue";
 import { WalletsModalState } from "@tonconnect/ui";
 import { useTonConnectUI } from "./useTonConnectUI";
