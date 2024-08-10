@@ -1,7 +1,7 @@
 import { ref } from "vue";
 import { useTonConnectUI } from "./useTonConnectUI";
 
-// Define the structure of a transaction message
+
 interface TransactionMessage {
   address: string;
   amount: string;
