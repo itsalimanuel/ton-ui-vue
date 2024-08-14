@@ -6,5 +6,12 @@ For any questions or support, you can reach out via Telegram: [t.me/itsalikhalou
 
 If you'd like to support the project via TON, please send to the following TON address:
 ```
-UQA_QDHAa1jL80_NBUxXzMqNyJ1pwqrZpjtMN8npPT40s_rS
+itsalikhalouf.ton
 ```
+
+or
+
+```
+UQChpBnVRMaTrmNH-QLPzjPm4pkM4hcb5ZriRpkedoypEfxi
+```
+
