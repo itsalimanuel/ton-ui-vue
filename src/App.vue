@@ -1,16 +1,34 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { inject } from "@vercel/analytics";
-import { TonConnectButton, useSendTransaction } from "../src";
+import {
+  TonConnectButton,
+  useSendTransaction,
+  useTonConnectModal,
+} from "../src";
 
-const { sendTransaction, sending, error, messages, addMessage, clearMessages } =
-  useSendTransaction();
+const { close: closeModal } = useTonConnectModal();
+const { sendTransaction, addMessage, clearMessages } = useSendTransaction();
 
-addMessage("UQDvqTF0nH9vy-zasif4IV2wtiGxoP57hPLsO7q886OifpYk", "1000000");
+const sendTransactionWithLog = async () => {
+  try {
+    // Add transaction message
+    addMessage(
+      "UQDvqTF0nH9vy-zasif4IV2wtiGxoP57hPLsO7q886OifpYk",
+      "1000000000",
+    );
 
-onMounted(() => {
-  inject();
-});
+    // Wait for the transaction to complete
+    await sendTransaction();
+
+    console.log("Transaction sent successfully!");
+  } catch (err) {
+    console.error("Error:", err);
+  } finally {
+    // Close the wallet modal after transaction
+    closeModal();
+    // Clear transaction messages after completion
+    clearMessages();
+  }
+};
 </script>
 
 <template>
@@ -35,8 +53,9 @@ onMounted(() => {
 
       <h2>tonconnect for vue3</h2>
       <span>By <a href="https://www.linkedin.com/in/khaloufali/">Ali</a></span>
-      <TonConnectButton class="ui-top" />
 
+      <button @click="sendTransactionWithLog">send</button>
+      <TonConnectButton class="ui-top" />
     </div>
   </div>
 </template>
