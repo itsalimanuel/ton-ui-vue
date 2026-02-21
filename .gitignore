@@ -31,3 +31,4 @@ main
 .nx/cache
 .nx/workspace-data
 .vercel
+.env*.local
